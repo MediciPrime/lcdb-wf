@@ -203,6 +203,8 @@ rule markduplicates:
     output:
         bam=patterns['markduplicates']['bam'],
         metrics=patterns['markduplicates']['metrics']
+    log:
+        patterns['markduplicates']['bam'] + '.log'
     wrapper:
         wrapper_for('picard/markduplicates')
 
